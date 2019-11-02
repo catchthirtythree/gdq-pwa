@@ -25,7 +25,7 @@ app.get('/schedule', (req, res) => {
 
     const $ = cheerio.load(body)
 
-    return res.status(200).json(scheduleParse.buildResponse($))
+    return res.status(200).json(scheduleParser.buildResponse($))
   })
 })
 
@@ -46,7 +46,7 @@ app.get('/schedule/:id', (req, res) => {
 
     const $ = cheerio.load(body)
 
-    return res.status(200).json(scheduleParse.buildResponse($))
+    return res.status(200).json(scheduleParser.buildResponse($))
   })
 })
 
