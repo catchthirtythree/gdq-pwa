@@ -25,13 +25,7 @@ app.get('/schedule', (req, res) => {
 
     const $ = cheerio.load(body)
 
-    return res.status(200).json({
-      title: scheduleParser.getTitle($),
-      table: {
-        headers: scheduleParser.getHeaders($),
-        runs: scheduleParser.getRuns($)
-      }
-    })
+    return res.status(200).json(scheduleParse.buildResponse($))
   })
 })
 
@@ -52,13 +46,7 @@ app.get('/schedule/:id', (req, res) => {
 
     const $ = cheerio.load(body)
 
-    return res.status(200).json({
-      title: scheduleParser.getTitle($),
-      table: {
-        headers: scheduleParser.getHeaders($),
-        runs: scheduleParser.getRuns($)
-      }
-    })
+    return res.status(200).json(scheduleParse.buildResponse($))
   })
 })
 

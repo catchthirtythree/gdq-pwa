@@ -1,5 +1,15 @@
 const lodash = require('lodash')
 
+let buildResponse = ($) => {
+  return {
+    title: getTitle($),
+    table: {
+      headers: getHeaders($),
+      runs: getRuns($)
+    }
+  }
+}
+
 let getTitle = ($) => {
   const eventRow = $('.container h1.text-gdq-red')
   const eventNode = lodash.head(eventRow)
@@ -58,5 +68,5 @@ let getRuns = ($) => {
 }
 
 module.exports = {
-  getTitle, getHeaders, getRuns
+  buildResponse, getTitle, getHeaders, getRuns
 }
