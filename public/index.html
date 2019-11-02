@@ -1,0 +1,52 @@
+<html>
+
+<head>
+  <title>GDQ Schedule</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+  
+  <link href="./css/stylesheet.css" rel="stylesheet">
+
+  <script src="./lib/lodash.js"></script>
+</head>
+
+<body>
+
+  <div id="event-title"></div>
+
+  <!-- <div id="event-headers">
+    <div class="event-line">
+      <span class="event-cell short">Time</span>
+      <span class="event-cell long">Game</span>
+      <span class="event-cell short">Runners</span>
+      <span class="event-cell short">Setup</span>
+    </div>
+
+    <div class="event-line">
+      <span class="event-cell short">Length</span>
+      <span class="event-cell long">Category</span>
+      <span class="event-cell short">Host</span>
+      <span class="event-cell short">—</span>
+    </div>
+  </div> -->
+
+  <div id="event-table"></div>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./worker.js')
+          .then((reg) => {
+            console.log('Service worker registered.', reg);
+          });
+      });
+    }
+  </script>
+  <script src="./src/index.js"></script>
+
+</body>
+
+</html>

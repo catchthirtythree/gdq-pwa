@@ -1,0 +1,1897 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Games Done Quick</title>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="/static/res/css/main.css" />
+<script src="/static/res/js/main.min.js"></script>
+<link rel="shortcut icon" href="/static/res/img/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="/static/res/img/favicon/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/static/res/img/favicon/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/static/res/img/favicon/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/static/res/img/favicon/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/static/res/img/favicon/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/static/res/img/favicon/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/static/res/img/favicon/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/static/res/img/favicon/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/res/img/favicon/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/static/res/img/favicon/favicon-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/static/res/img/favicon/favicon-160x160.png" sizes="160x160">
+<link rel="icon" type="image/png" href="/static/res/img/favicon/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/static/res/img/favicon/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/static/res/img/favicon/favicon-32x32.png" sizes="32x32">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="msapplication-TileImage" content="/static/res/img/favicon/mstile-144x144.png">
+<meta name="msapplication-config" content="/static/res/img/favicon/browserconfig.xml">
+</head>
+<body>
+<div id="battlescene" style="display: none;">
+<p id="inputscene" style="color: #aaff33; font-family: Arial, sans-serif; font-weight: 500; font-size: 56px; position: absolute; top: 6%; right: 10%; text-shadow: 0 0 5px #22ff22;">
+Input 1 </p>
+<a href="#" title="Click to return whence you came, Harrier." onclick="location.reload();">
+<video id="battlevideo" preload="none" loop style="position: fixed; height: 100%; width: 100%; right: 0; left: 0; bottom: 0; margin-left: auto; margin-right: auto;">
+<source id="battlesource1" type="video/webm" src="/static/res/video/harrierverylow.webm">
+<source src="/static/res/video/harrierverylow.mp4" type="video/mp4">
+</video>
+</a>
+</div>
+<div id="scene">
+<div id="white-bg">
+<nav id="top" class="navbar navbar-default navbar-static-top navbar-inverse" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button> <a class="navbar-brand visible-xs-inline" href="#" onclick="window.history.go(-1); return false;"><i class="fa fa-chevron-left"></i></a> <a class="navbar-brand" href="/"><img src="/static/res/img/gdqlogo.png" style="height: 100%" alt="Games Done Quick" /></a>
+</div>
+<div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+<ul class="nav navbar-nav">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">Event Info
+<span class="caret"></span></a>
+<ul class="dropdown-menu" role="menu">
+<li><a href="https://gamesdonequick.com/rules"><i class="fa fa-gavel fa-fw"></i> Event/Broadcast Rules</a></li>
+<li><a href="https://gamesdonequick.com/volunteer/faq"><i class="fa fa-question fa-fw"></i> Volunteering FAQ</a></li>
+<li><a href="https://gamesdonequick.com/submission-guide"><i class="fa fa-book fa-fw"></i> Game Submission Guide</a></li>
+
+<li class="divider"></li>
+<li><a href="https://gamesdonequick.com/submission/all"><i class="fa fa-gamepad fa-fw"></i> All Game
+Submissions</a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">Community Info <span class="caret"></span></a>
+<ul class="dropdown-menu" role="menu">
+<li role="presentation" class="dropdown-header">Games Done Quick</li>
+<li><a href="https://photos.gamesdonequick.com"><i class="fa fa-camera fa-fw"></i> Event Photos</a></li>
+<li><a href="https://twitch.tv/gamesdonequick"><i class="fa fa-twitch fa-fw"></i> Twitch Channel</a></li>
+<li><a href="https://twitter.com/GamesDoneQuick"><i class="fa fa-twitter fa-fw"></i> Twitter</a></li>
+<li role="presentation" class="dropdown-header">Speedrunning Guides</li>
+<li><a href="/mod-guide"><i class="fa fa-gavel fa-fw"></i> Guide to Automated Moderation</a></li>
+<li class="divider"></li>
+<li role="presentation" class="dropdown-header">Speedrunning Communities</li>
+<li><a href="http://speeddemosarchive.com"><i class="fa fa-archive fa-fw"></i> Speed Demos Archive</a></li>
+<li><a href="http://speedrunslive.com"><i class="fa fa-video-camera fa-fw"></i> Speed Runs Live</a></li>
+<li><a href="http://speedrun.com"><i class="fa fa-clock-o fa-fw"></i> Speedrun.com</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us <span class="caret"></span></a>
+<ul class="dropdown-menu" role="menu">
+<li><a href="https://gamesdonequick.com/privacy"><i class="fa fa-eye-slash fa-fw"></i> Privacy Policy</a></li>
+<li><a href="https://gamesdonequick.com/contact"><i class="fa fa-pencil fa-fw"></i> Contact Us</a></li>
+</ul>
+</li>
+<li>
+<a href="https://discord.gg/gamesdonequick"><i class="fa fa-fw fa-comments" aria-hidden="true"></i> Discord</a></a>
+</li>
+<li>
+<a href="https://www.youtube.com/user/gamesdonequick/playlists"><i class="fa fa-fw fa-youtube-play" aria-hidden="true"></i> VODS</a>
+</li>
+<li>
+<a href="/hotfix"><i class="fa fa-fw fa-bolt" aria-hidden="true"></i> HOTFIX</a>
+</li>
+</ul>
+<a href="https://gamesdonequick.com/auth/login" role="button" class="btn btn-primary btn-sm navbar-btn navbar-right extra-button-space">Login</a>
+<a href="https://gamesdonequick.com/auth/register" role="button" class="btn btn-danger btn-sm navbar-btn navbar-right extra-button-space">Register</a> </div>
+</div>
+</nav>
+<div class="container">
+</div>
+<div class="container text-center">
+<div class="fa-stack center-block medium-icon-red fa-5x">
+<i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-clock-o fa-stack-1x fa-inverse"></i>
+</div>
+<h1 class="text-gdq-red extra-spacing">AGDQ2016 Schedule</h1>
+<h4 class="text-gdq-black well ">All start and end times below are converted to your local time<span id="offset-detected"></span>.</h4>
+</div>
+<table id="runTable" class="table table-condensed">
+<thead>
+<tr class="day-split">
+<td>Time &amp; Length</td>
+<td>Run</td>
+<td>Runners &amp; <i class="fa fa-microphone"></i> Host</td>
+<td class="visible-lg">Setup&nbsp;Length</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="start-time text-right">2016-01-03T16:30:00Z</td>
+<td>AGDQ Pre-show</td>
+<td>None</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:05:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:25:00 </td>
+<td> &mdash; </td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-03T17:00:00Z</td>
+<td>Splatoon</td>
+<td>Tones Balones</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:15:02 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:52:58 </td>
+<td>Any% &mdash; WIIU</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-03T18:08:00Z</td>
+<td>Super Monkey Ball: Banana Blitz</td>
+<td>Miles</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:07:50 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:52:10 </td>
+<td>All Worlds &mdash; Wii</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-03T19:08:00Z</td>
+<td>Super Monkey Ball</td>
+<td>Barhunga</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:10:13 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:18:47 </td>
+<td>Expert through Master &mdash; GCN</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-03T19:37:00Z</td>
+<td>Rayman Legends</td>
+<td>SpikeVegeta</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:23:03 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:34:57 </td>
+<td>Any% &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-03T21:35:00Z</td>
+<td>Kirby 64: The Crystal Shards</td>
+<td>swordsmankirby</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:11:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:12:18 </td>
+<td>100% &mdash; N64</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-03T22:58:18Z</td>
+<td>Kirby: Squeak Squad</td>
+<td>Mr_Shasta</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:38:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:48:47 </td>
+<td>Any% &mdash; DS</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-04T00:25:05Z</td>
+<td>Diddy Kong Racing</td>
+<td>MrsGizamaluke, Toufool31</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:25:15 </td>
+<td>All Trophies Race &mdash; N64</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-04T01:02:20Z</td>
+<td>Super Mario Kart</td>
+<td>KVD, Md_Neo</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:32:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:32:17 </td>
+<td>Any% Single Seg MP Race &mdash; SNES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-04T02:06:37Z</td>
+<td>Super Mario 64</td>
+<td>Cheese05, Puncayshun, Simply</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:28:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:48:41 </td>
+<td>120 star &mdash; N64</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-04T04:23:18Z</td>
+<td>Super Mario 64 Multiplayer</td>
+<td>Snowman, 360Chrism</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:14:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:15:09 </td>
+<td>16 Star &mdash; </td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-04T04:52:27Z</td>
+<td>Fire Emblem: Path of Radiance</td>
+<td>Gwimpage</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:22:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 2:05:06 </td>
+<td>Any% &mdash; GCN</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-04T07:19:33Z</td>
+<td>The Legend of Zelda: Oracle of Ages</td>
+<td>Casusby</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:10:17 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:59:43 </td>
+<td>Any% &mdash; GBC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-04T09:29:33Z</td>
+<td>Prinny: Can I Really Be the Hero?</td>
+<td>PinkPajamas</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:10:26 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:30:34 </td>
+<td>Hell&#039;s Finest &mdash; PSP</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-04T10:10:33Z</td>
+<td>Strider 2</td>
+<td>chuckles825</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:14:30 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:22:30 </td>
+<td>Any% &mdash; PS1</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-04T10:47:33Z</td>
+<td>Gunstar Super Heroes</td>
+<td>Sonikkustar</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:10:29 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:24:31 </td>
+<td>Hard &mdash; GBA</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-04T11:22:33Z</td>
+<td>Left 4 Dead 2</td>
+<td>Rawrica, Urboykyle, Yashichi, TaylortotFTW</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:51 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:11:09 </td>
+<td>Main Campaigns co-op &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-04T12:46:33Z</td>
+<td>Darksiders II</td>
+<td>snowysnowwolf</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:15:31 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:00:29 </td>
+<td>Any% &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-04T14:02:33Z</td>
+<td>Devil May Cry 4: Special Edition</td>
+<td>PvtCb</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:20:20 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:13:40 </td>
+<td>Vergil NG Devil Hunter &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-04T15:36:33Z</td>
+<td>Transformers: Devastation</td>
+<td>Halfcoordinated</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:32:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:44:35 </td>
+<td>Any% NG+ Prime Difficulty, 1-Handed &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-04T16:53:08Z</td>
+<td>Resident Evil HD Remaster</td>
+<td>Carcinogen</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:17:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:35:30 </td>
+<td>Jill or Chris Real Survival Best Ending &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-04T18:45:38Z</td>
+<td>Super Star Wars</td>
+<td>Danzel_Glovington, Striker</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:18:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:27:20 </td>
+<td>Any% Race &mdash; SNES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-04T19:30:58Z</td>
+<td>The Magical Quest Starring Mickey Mouse</td>
+<td>darbian, R3DninjaJOSH</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:13:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:21:01 </td>
+<td>Any% Hard &mdash; SNES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-04T20:04:59Z</td>
+<td>Disney&#039;s Aladdin</td>
+<td>JoeDamilio</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:10:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:17:39 </td>
+<td>Any% &mdash; SNES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-04T20:32:38Z</td>
+<td>The Lion King</td>
+<td>TheMexicanRunner</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:17:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:15:11 </td>
+<td>Any% Hard &mdash; SNES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-04T21:04:49Z</td>
+<td>Goof Troop</td>
+<td>Yagamoth</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:25:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:23:29 </td>
+<td>any% 1p2c &mdash; SNES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-04T21:53:18Z</td>
+<td>Kingdom Hearts HD 1.5 ReMIX</td>
+<td>Zetris</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:28:25 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 3:16:35 </td>
+<td>Any% Proud &mdash; PS3</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-05T01:38:18Z</td>
+<td>BattleBlock Theater</td>
+<td>PJ, MechaRichter</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:31:03 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:39:57 </td>
+<td>Any% Co-op Insane &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-05T03:49:18Z</td>
+<td>Ori and the Blind Forest</td>
+<td>Ankamius, Grimelios</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:13:36 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:53:24 </td>
+<td>All Cells &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-05T04:56:18Z</td>
+<td>Velocity 2X</td>
+<td>Nosraef</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:14:35 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:24:25 </td>
+<td>New Game Any% &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-05T06:35:18Z</td>
+<td>Super Time Force Ultra</td>
+<td>Tohloo</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:13:35 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:26:25 </td>
+<td>All Missions &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-05T07:15:18Z</td>
+<td>Fez</td>
+<td>Vulajin</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:10:30 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:28:30 </td>
+<td>Any% &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-05T07:54:18Z</td>
+<td>Axiom Verge</td>
+<td>GVirus</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:55 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:58:05 </td>
+<td>Any% &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-05T09:05:18Z</td>
+<td>Hotline Miami</td>
+<td>Snowfats</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:37:12 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:25:48 </td>
+<td>NG+ All Levels &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-05T10:08:18Z</td>
+<td>Iji</td>
+<td>BIGHONKINBURGER</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:11:12 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:34:48 </td>
+<td>Any% or Pacifist &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-05T10:54:18Z</td>
+<td>Hero Core</td>
+<td>Dragondarch</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:10:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:24:00 </td>
+<td>any% Normal &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-05T11:28:18Z</td>
+<td>Teslagrad</td>
+<td>frozentrually</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:06:52 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:22:08 </td>
+<td>15 Scroll &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-05T11:57:18Z</td>
+<td>A Hat In Time (Beta)</td>
+<td>Shockwve</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:19:16 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:25:44 </td>
+<td>All Time Pieces &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-05T12:42:18Z</td>
+<td>Cloudbuilt</td>
+<td>Midboss, Wobs23</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:10:43 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:15:17 </td>
+<td>Original22 (Rush Mode) &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-05T13:08:18Z</td>
+<td>Kero Blaster</td>
+<td>draculantern</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:13:25 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:26:35 </td>
+<td>Any% &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-05T13:48:18Z</td>
+<td>Snapshot</td>
+<td>Nightmare47</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:15:06 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:19:54 </td>
+<td>Any% &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-05T14:23:18Z</td>
+<td>Spelunky</td>
+<td>Kinnijup-, BumCommando</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:30:46 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:25:14 </td>
+<td>All Shortcuts + Olmec Relay &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-05T15:19:18Z</td>
+<td>Crypt of the Necrodancer</td>
+<td>SpootyBiscuit</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:16:12 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:18:48 </td>
+<td>Coda All Zones &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-05T15:54:18Z</td>
+<td>Lara Croft and the Guardian of Light</td>
+<td>RandomPinkBunny, DrTchops</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:15:13 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:24:47 </td>
+<td>Any% NG+ Co-op &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-05T16:34:18Z</td>
+<td>Vendetta</td>
+<td>MURPHAGATOR!</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:10:51 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:18:09 </td>
+<td>Any% &mdash; ARC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-05T17:03:18Z</td>
+<td>The Simpsons Arcade Game</td>
+<td>Maquina_azul30</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:08:11 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:18:49 </td>
+<td>Any% Normal &mdash; PS3</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-05T17:30:18Z</td>
+<td>Dungeons &amp; Dragons: Shadow Over Mystara</td>
+<td>Hugo4Fun</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:31:23 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:30:37 </td>
+<td>Cleric%, No Deaths &mdash; PS3</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-05T18:32:18Z</td>
+<td>Metroid Fusion</td>
+<td>HerculesBenchpress, Kirbymastah, JRP2234</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:16:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:15:12 </td>
+<td>Any% &mdash; GBA</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-05T20:03:30Z</td>
+<td>Metroid Prime</td>
+<td>Miles</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:28:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:21:56 </td>
+<td>Any% &mdash; GCN</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-05T21:53:26Z</td>
+<td>The Legend of Zelda</td>
+<td>Lackattack24</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:26:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:30:14 </td>
+<td>Any% &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-05T22:49:40Z</td>
+<td>Super Metroid BONUS</td>
+<td>sweetnumb, oatsngoats</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:25:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:52:01 </td>
+<td>Any% 2p1c &mdash; Super Nintendo</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-06T00:06:41Z</td>
+<td>Half-Life 2</td>
+<td>Noir</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:28:08 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:49:52 </td>
+<td>Any% &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-06T02:24:41Z</td>
+<td>Portal 2</td>
+<td>Drastnikov, SirStendec</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:32:37 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:59:23 </td>
+<td>Co-op &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-06T03:56:41Z</td>
+<td>Alien Swarm</td>
+<td>mr.deagle, The Master</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:10:20 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:16:40 </td>
+<td>any% co-op deathless &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-06T04:23:41Z</td>
+<td>The Talos Principle</td>
+<td>Azorae</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:44:44 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:58:16 </td>
+<td>100% &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-06T06:06:41Z</td>
+<td>Wrack</td>
+<td>Shaddex</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:07:39 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:18:21 </td>
+<td>Any% &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-06T06:32:41Z</td>
+<td>Wolfenstein: The Old Blood</td>
+<td>Blood_Thunder</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:09:07 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:06:53 </td>
+<td>Any% &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-06T07:48:41Z</td>
+<td>Tag: The Power of Paint</td>
+<td>quo</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:06:27 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:05:33 </td>
+<td>Any% &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-06T08:00:41Z</td>
+<td>SOMA</td>
+<td>ZOM</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:08:49 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:10:11 </td>
+<td>Any% &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-06T09:19:41Z</td>
+<td>Amnesia: A Machine for Pigs</td>
+<td>Scoot</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:06:07 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:28:53 </td>
+<td>Any% &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-06T09:54:41Z</td>
+<td>Outlast</td>
+<td>Saint Connor</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:14:21 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:20:39 </td>
+<td>Any% &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-06T10:29:41Z</td>
+<td>Ink</td>
+<td>Uraj</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:04:27 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:13:33 </td>
+<td>Any% &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-06T10:47:41Z</td>
+<td>Prince of Persia</td>
+<td>CapnClever</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:07:30 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:17:30 </td>
+<td>Any% &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-06T11:12:41Z</td>
+<td>Tony Hawk&#039;s Underground 2</td>
+<td>Plumato</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:43 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:21:17 </td>
+<td>Classic Normal All Goals &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-06T11:46:41Z</td>
+<td>Tony Hawk&#039;s Pro Skater</td>
+<td>guished</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:20:26 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:09:34 </td>
+<td>Any% with 100% incentive &mdash; N64</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-06T12:16:41Z</td>
+<td>Crazy Taxi 2</td>
+<td>2dos</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:04:59 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:21:01 </td>
+<td>Crazy Pyramid &mdash; DC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-06T12:42:41Z</td>
+<td>Sonic Advance</td>
+<td>Combo Blaze</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:06:18 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:18:42 </td>
+<td>Sonic Any% &mdash; GBA</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-06T13:07:41Z</td>
+<td>Sonic Advance 3</td>
+<td>Kirbymastah</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:17:02 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:43:58 </td>
+<td>All Stages &mdash; GBA</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-06T14:08:41Z</td>
+<td>Sonic Lost World</td>
+<td>DarkSpinesSonic</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:15:32 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:19:08 </td>
+<td>any% Wingless &mdash; WIIU</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-06T15:43:21Z</td>
+<td>Strider</td>
+<td>bjw</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:11:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:04:33 </td>
+<td>Any% &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-06T15:58:54Z</td>
+<td>Battle Kid 2: Mountain of Torment</td>
+<td>Spiriax</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:20:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:00:00 </td>
+<td>Any% &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-06T17:18:54Z</td>
+<td>Gimmick!</td>
+<td>becored, aquas</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:10:05 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:11:34 </td>
+<td>Best Ending Race &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-06T17:40:33Z</td>
+<td>Teenage Mutant Ninja Turtles</td>
+<td>whitman_price</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:11:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:19:36 </td>
+<td>Any% &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-06T18:11:09Z</td>
+<td>Ninja Gaiden II: The Dark Sword of Chaos</td>
+<td>jimmypoopins</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:05:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:10:26 </td>
+<td>Any% &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-06T18:26:35Z</td>
+<td>Ninja Gaiden III: The Ancient Ship of Doom</td>
+<td>gusmancini</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:30:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:19:25 </td>
+<td>Pacifist &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-06T19:16:00Z</td>
+<td>Batman: The Video Game</td>
+<td>Just_defend, InfestedRiche, dxtrslab, badbrakes</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:15:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:11:54 </td>
+<td>Any% &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-06T19:42:54Z</td>
+<td>Blaster Master</td>
+<td>ShiningDragoon, Skavenger216, UraniumAnchor, feasel</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:10:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:33:35 </td>
+<td>Deathwarps &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-06T20:26:29Z</td>
+<td>Battletoads</td>
+<td>TheMexicanRunner</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:15:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:38:41 </td>
+<td>Any%/100% &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-06T21:20:10Z</td>
+<td>Donkey Kong Country</td>
+<td>Eazinn</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:11:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:36:10 </td>
+<td>Any% All Stages &mdash; SNES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-06T22:07:20Z</td>
+<td>Donkey Kong Country 2: Diddy&#039;s Kong Quest</td>
+<td>V0oid</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:15:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:32:51 </td>
+<td>102% &mdash; SNES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-06T23:55:11Z</td>
+<td>Kaizo Mario Bros. 3</td>
+<td>mitchflowerpower</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:05:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:34:29 </td>
+<td>Any% &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T00:34:40Z</td>
+<td>SETUP 4</td>
+<td>None</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:30:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:11:49 </td>
+<td> &mdash; </td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T01:16:29Z</td>
+<td>Super Mario Maker</td>
+<td>linkdeadx2, Andy, mitchflowerpower, area51, bismuth, Dram55, trihex, TheMexicanRunner</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:27:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:36:17 </td>
+<td>Custom Level Blind Race &mdash; WIIU</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T03:19:46Z</td>
+<td>Super Mario World</td>
+<td>Carl Sagan, xsvArea51, Dotsarecool, SethBling</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:13:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:06:00 </td>
+<td>0 Exit &mdash; SNES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T03:38:46Z</td>
+<td>Super Mario World</td>
+<td>Kakusho, Akisto, trumez, xpaco5</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:16:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:24:50 </td>
+<td>96 Exit &mdash; SNES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T05:19:36Z</td>
+<td>SMW2: Yoshi&#039;s Island</td>
+<td>Carl Sagan, rheal, mt76907</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:10:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:05:28 </td>
+<td>Any% &mdash; SNES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T05:35:04Z</td>
+<td>Lagoon</td>
+<td>PJ</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:10:51 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:29:09 </td>
+<td>Any% &mdash; SNES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T07:15:04Z</td>
+<td>Lester the Unlikely</td>
+<td>Radioactive_Rat</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:03:38 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:17:22 </td>
+<td>Any% &mdash; SNES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T07:36:04Z</td>
+<td>Low G Man: The Low Gravity Man</td>
+<td>Zakky the Goatragon</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:08:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:14:10 </td>
+<td>Any% &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T07:58:14Z</td>
+<td>Rocky &amp; Bullwinkle</td>
+<td>authorblues</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:05:52 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:05:08 </td>
+<td>Any% &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T08:09:14Z</td>
+<td>Shinobi</td>
+<td>infinitemystery</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:06:39 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:10:21 </td>
+<td>Any% &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T08:26:14Z</td>
+<td>King of Kings: The Early Years</td>
+<td>Linkums</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:04:40 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:15:20 </td>
+<td>The Wise Men, Normal &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T08:46:14Z</td>
+<td>Indiana Jones and the Temple of Doom</td>
+<td>feasel</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:04:45 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:14:15 </td>
+<td>Any% &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T09:05:14Z</td>
+<td>Hudson Hawk</td>
+<td>WhiteHat94</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:04:41 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:08:19 </td>
+<td>Any% &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T09:18:14Z</td>
+<td>Escape from Atlantis</td>
+<td>Dragondarch</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:08:56 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:06:04 </td>
+<td>Any% &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+ <td class="start-time text-right">2016-01-07T09:33:14Z</td>
+<td>Utsurun Desu.: Kawauso Hawaii e Iku</td>
+<td>Iongravirei</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:07:40 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:14:20 </td>
+<td>Best Ending &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T09:55:14Z</td>
+<td>Johnny Bazookatone</td>
+<td>guished</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:15:30 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:19:30 </td>
+<td>Any% &mdash; SAT</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T10:30:14Z</td>
+<td>Alpha Zylon</td>
+<td>BIGHONKINBURGER</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:07:09 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:09:51 </td>
+<td>Any% &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T10:47:14Z</td>
+<td>Animorphs</td>
+<td>Keizaron</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:21:10 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:44:50 </td>
+<td>Any% &mdash; GBC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T11:53:14Z</td>
+<td>Age of Empires</td>
+<td>Mhmd_FVC</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:10:48 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:03:12 </td>
+<td>IL Showcase &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T13:07:14Z</td>
+<td>Dragon Age: Origins</td>
+<td>letterswords</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:09:08 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:49:52 </td>
+<td>Any% &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T14:06:14Z</td>
+<td>Grand Theft Auto III</td>
+<td>Mhmd_FVC</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:10:01 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:18:59 </td>
+<td>Any% &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T15:35:14Z</td>
+<td>Castlevania</td>
+<td>kmac</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:22:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:16:11 </td>
+<td>Any% Whip Only &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T16:13:25Z</td>
+<td>Castlevania III: Dracula&#039;s Curse</td>
+<td>Iongravirei, ohon</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:09:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:31:45 </td>
+<td>Alucard &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T16:54:10Z</td>
+<td>Super Castlevania IV</td>
+<td>Just_defend</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:07:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:36:52 </td>
+<td>Any% Hard mode &mdash; SNES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T17:38:02Z</td>
+<td>Castlevania: Bloodlines</td>
+<td>Klaige</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:08:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:31:46 </td>
+<td>Any% Expert, Eric Lecarde &mdash; GEN</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T18:17:48Z</td>
+<td>Castlevania: Symphony of the Night</td>
+<td>MechaRichter</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:21:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:25:39 </td>
+<td>Richter All Bosses &mdash; XBOX360</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T19:04:27Z</td>
+<td>Super Punch-Out!!</td>
+<td>zallard1</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:17:07 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:15:53 </td>
+<td>Any% &mdash; SNES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T19:37:27Z</td>
+<td>Mike Tyson&#039;s Punch-Out!!</td>
+<td>zallard1, sinister1</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:15:17 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:26:43 </td>
+<td>Blindfolded &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T20:19:27Z</td>
+<td>Mirror&#039;s Edge</td>
+<td>SasukeAnimator</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:15:29 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:39:31 </td>
+<td>Any% &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T21:14:27Z</td>
+<td>StepMania</td>
+<td>Staiain</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:28:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:32:00 </td>
+<td>Showcase &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T22:14:27Z</td>
+<td>Mega Man X</td>
+<td>Tiki, Domalix</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:40 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:37:20 </td>
+<td>100% &mdash; SNES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T23:04:27Z</td>
+<td>Mega Man Zero</td>
+<td>Flameberger</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:14:36 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:38:24 </td>
+<td>All Missions &mdash; GBA</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-07T23:57:27Z</td>
+<td>Mega Man ZX</td>
+<td>Tiki</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:27:06 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:55:54 </td>
+<td>any% Normal &mdash; DS</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-08T01:20:27Z</td>
+<td>Azure Striker Gunvolt</td>
+<td>Ajarmar, Greenalink</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:29:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:51:00 </td>
+<td>Any% Speedrun Mode/All Stages &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-08T02:40:27Z</td>
+<td>Halo 4</td>
+<td>Proacejoker</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:24:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:34:00 </td>
+<td>Legendary &mdash; X360</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-08T04:38:27Z</td>
+<td>Shadow Complex</td>
+<td>Greenalink</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:13:20 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:08:40 </td>
+<td>Any% NG+ Insane &mdash; X360</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-08T05:00:27Z</td>
+<td>Paper Mario</td>
+<td>GigaDB</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:16:44 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 3:04:16 </td>
+<td>All Cards &mdash; N64</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-08T08:21:27Z</td>
+<td>Blast Corps</td>
+<td>Graviton</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:10:29 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:36:31 </td>
+<td>100% All Platinum Medals &mdash; N64</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-08T10:08:27Z</td>
+<td>Star Fox 64</td>
+<td>BeefWellington, dsx</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:07:35 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:23:25 </td>
+<td>Any% &mdash; N64</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-08T10:39:27Z</td>
+<td>Banjo-Kazooie</td>
+<td>Stivitybobo</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:13:43 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:29:17 </td>
+<td>Any% no RBA &mdash; N64</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-08T12:22:27Z</td>
+<td>Secret of Mana</td>
+<td>Yagamoth</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:27:46 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:55:14 </td>
+<td>Any% 1P2C &mdash; SNES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-08T14:45:27Z</td>
+<td>Teenage Mutant Ninja Turtles IV: Turtles in Time</td>
+<td>sinister1</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:16:22 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:23:38 </td>
+<td>any% hard mode 1p2c &mdash; SNES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-08T15:25:27Z</td>
+<td>Diablo</td>
+<td>Funkmastermp</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:25 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:20:35 </td>
+<td>any% (single segment) &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-08T15:58:27Z</td>
+<td>Diablo II: Lord of Destruction</td>
+<td>MrLlamaSC</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:17:55 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:47:05 </td>
+<td>D2:LOD Sorceress Any% Normal &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-08T18:03:27Z</td>
+<td>Yoshi&#039;s Island Race Rebroadcast</td>
+<td>Carl Sagan, rheal, mt76907</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:02:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:05:00 </td>
+<td>VOD &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-08T18:10:27Z</td>
+<td>Pok&eacute;mon Yellow: Special Pikachu Edition</td>
+<td>Gunnermaniac3</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:05:11 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 2:08:49 </td>
+<td>any% glitchless &mdash; GB</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-08T20:24:27Z</td>
+<td>Pokemon Blue</td>
+<td>Shenanagans</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:05:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:27:00 </td>
+<td>Glitch Showcase &mdash; GB</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-08T20:56:27Z</td>
+<td>Final Fantasy</td>
+<td>Gyre</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:09:40 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:12:20 </td>
+<td>Any% (JP) &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-08T21:18:27Z</td>
+<td>Buster</td>
+<td>bjw</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:11:40 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:10:20 </td>
+<td>Best Ending &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-08T21:40:27Z</td>
+<td>Rockman 4 BCAS</td>
+<td>Golden, Garrison_tt</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:15:18 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:26:42 </td>
+<td>Any% &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-08T22:22:27Z</td>
+<td>Mega Man 10</td>
+<td>slurpeeninja</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:09:55 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:37:05 </td>
+<td>Any% Bass Normal &mdash; Wii</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-08T23:09:27Z</td>
+<td>Mega Man 9</td>
+<td>slurpeeninja, TheBlacktastic</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:11:51 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:35:09 </td>
+<td>Any% Protoman &mdash; WSHP</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-08T23:56:27Z</td>
+<td>Mega Man 6</td>
+<td>ohon</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:05:41 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:35:19 </td>
+<td>Any% &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-09T00:37:27Z</td>
+<td>Mega Man 2</td>
+<td>duckfist</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:22:20 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:28:40 </td>
+<td>any% normal &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-09T01:28:27Z</td>
+<td>Super Mario Bros.</td>
+<td>darbian, Lackattack24, GreenDeathFlavor</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:09:39 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:05:21 </td>
+<td>Any% &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-09T01:43:27Z</td>
+<td>Super Mario Bros. 2</td>
+<td>whitman_price_, Svenne, GreenDeathFlavor</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:16:34 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:12:26 </td>
+<td>Any% &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-09T02:12:27Z</td>
+<td>The Legend of Zelda: Ocarina of Time / Master Quest</td>
+<td>ZFG</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:38:35 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:40:25 </td>
+<td>All Dungeons &mdash; GCN</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-09T04:31:27Z</td>
+<td>The Legend of Zelda: Majora&#039;s Mask</td>
+<td>thiefbug, MajinPhil, fullgrowngaming, Trevperson</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:07:48 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 5:28:12 </td>
+<td>4p co-op 100% &mdash; N64</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-09T10:07:27Z</td>
+<td>Super Mario Galaxy</td>
+<td>360Chrism</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:19:30 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 2:40:30 </td>
+<td>Any% Luigi &mdash; Wii</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-09T13:07:27Z</td>
+<td>Ratchet &amp; Clank: Up Your Arsenal</td>
+<td>Xem</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:17:41 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:34:19 </td>
+<td>New Game + &mdash; PS2</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-09T13:59:27Z</td>
+<td>Jak 3</td>
+<td>ThaRixer, HillaryPuff</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:16:56 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:47:04 </td>
+<td>Any% no OoB &mdash; PS2</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-09T15:03:27Z</td>
+<td>Crash Bandicoot</td>
+<td>CaneofPacci</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:10:07 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:19:53 </td>
+<td>100% &mdash; PS1</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-09T16:33:27Z</td>
+<td>Spyro the Dragon</td>
+<td>ChrisLBC</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:20:53 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:41:07 </td>
+<td>Any% &mdash; PS1</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-09T17:35:27Z</td>
+<td>Shovel Knight</td>
+<td>TheTaiwanNinja</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:20:16 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:37:44 </td>
+<td>NG+ Plague &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-09T18:33:27Z</td>
+<td>Mario Kart 8</td>
+<td>AeonFrodo</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:20:50 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:07:10 </td>
+<td>200cc 32 Tracks Hard CPU &mdash; WIIU</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-09T20:01:27Z</td>
+<td>Mario Kart 64</td>
+<td>Almo, Kirch</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:07 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:41:53 </td>
+<td>All Cups 2p1c &mdash; N64</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-09T20:55:27Z</td>
+<td>TASBOT Plays Mario Kart 64</td>
+<td>Weatherton</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:16:29 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:04:31 </td>
+<td>Star Cup &mdash; N64</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-09T21:16:27Z</td>
+<td>TASBot vs Humans -- Pwn Adventure Z</td>
+<td>micro500, bismuth, EmoArbiter, dwangoAC</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:29:06 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:06:54 </td>
+<td>4-way Multispecies Race &mdash; </td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-09T21:52:27Z</td>
+<td>TASBot plays Brain Age</td>
+<td>micro500, xy2_</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:09:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:20:00 </td>
+<td>x100 &mdash; NDS</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-09T22:21:27Z</td>
+<td>TASBot plays Super Mario Bros. 3</td>
+<td>dwangoAC, Lord Tom</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:11:37 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:11:23 </td>
+<td> &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-09T22:44:27Z</td>
+<td>TASBot takes Total Control of...</td>
+<td>dwangoAC, p4plus2</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:26:45 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:20:15 </td>
+<td> &mdash; </td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-09T23:31:27Z</td>
+<td>The Legend of Zelda: A Link to the Past</td>
+<td>Andy, superskuj</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:17:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:29:47 </td>
+<td>Reverse Boss Order &mdash; SNES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-10T01:18:14Z</td>
+<td>Bloodborne</td>
+<td>FatB</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:18:11 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:46:49 </td>
+<td>Any% &mdash; PS4</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-10T02:23:14Z</td>
+<td>Super Metroid</td>
+<td>Straevaras</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:32:03 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:16:57 </td>
+<td>Reverse Boss Order &mdash; SNES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+<tr>
+<td class="start-time text-right">2016-01-10T04:12:14Z</td>
+<td>Final Fantasy IV</td>
+<td>nocashnocash</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:15:00 </td>
+</tr>
+<tr class="second-row">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 3:35:00 </td>
+<td>Any% no 64 floor glitch &mdash; SNES</td>
+<td><i class="fa fa-microphone"></i> </td>
+</tr>
+</tbody>
+</table>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var dayBreak = null;
+        var firstBreak = true;
+
+        $("#offset-detected").text(' (detected as UTC' + moment().format('Z') + ')');
+
+        $('tbody .start-time').each(function(index) {
+
+
+
+            runTimestamp = moment($(this).html());
+            runTime = new moment(runTimestamp);
+
+            if ($(this).parent().hasClass('second-row')) {
+                firstBreak = false;
+            } else {
+                firstBreak = true;
+            }
+
+
+
+            if (dayBreak != runTime.date()) {
+
+                dayBreak = runTime.date(); // Get the day of the month for the day rows
+
+                if (firstBreak != true) {
+
+                    $(this).parent().next('tr').before('<tr class="day-split" >' +
+                        '<td colspan="20">' +
+                        runTime.format('dddd, MMMM Do ') + '</td></tr>');
+                } else {
+                    $(this).parent().before('<tr class="day-split" >' +
+                        '<td colspan="20">' +
+                        runTime.format('dddd, MMMM Do ') + '</td></tr>');
+                }
+
+
+            }
+
+
+            $(this).html(runTime.format('LT'));
+        });
+    });
+</script>
+<br /><br />
+<div id="foot" class="text-center">
+<a href="#top"><i class="fa fa-chevron-circle-up text-gdq-white fa-2x" style="padding-top: 5px"></i></a>
+<p style="padding-top: 10px"><a id="battle" href="#" onclick="document.getElementById('battlevideo').play();">
+Many more battle scenes will soon be available!</a>
+</p>
+<br /><br />
+</div>
+</div>
+</div>
+</body>
+</html>

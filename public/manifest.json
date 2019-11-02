@@ -1,0 +1,17 @@
+{
+  "short_name": "xGDQ",
+  "name": "GDQ Schedule",
+  "description": "Get the schedule for the current and past GamesDoneQuick marathons.",
+  "icons": [
+    {
+      "src": "/img/icon-256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#ffffff"
+}
