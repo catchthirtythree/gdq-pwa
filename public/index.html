@@ -7,7 +7,7 @@
 
   <link rel="manifest" href="./manifest.json">
   <link rel="icon" href="./favicon.ico" type="image/x-icon" />
-  
+
   <link href="./css/stylesheet.css" rel="stylesheet">
 
   <script src="./lib/lodash.js"></script>
@@ -16,24 +16,36 @@
 <body>
 
   <div id="event-title"></div>
-
-  <!-- <div id="event-headers">
-    <div class="event-line">
-      <span class="event-cell short">Time</span>
-      <span class="event-cell long">Game</span>
-      <span class="event-cell short">Runners</span>
-      <span class="event-cell short">Setup</span>
-    </div>
-
-    <div class="event-line">
-      <span class="event-cell short">Length</span>
-      <span class="event-cell long">Category</span>
-      <span class="event-cell short">Host</span>
-      <span class="event-cell short">—</span>
-    </div>
-  </div> -->
-
   <div id="event-table"></div>
+
+  <div id="modal-backdrop">
+    <div id="modal">
+      <div class="modal-header">
+        <div class="modal-title">Switch Schedule</div>
+        <div class="modal-close">&times;</div>
+      </div>
+
+      <div class="modal-content">
+        <div class="modal-form">
+          <label for="id">
+            Schedule ID:
+          </label>
+          <input type="text" id="schedule-id" name="id" placeholder="Example: 28">
+        </div>
+
+        <div class="modal-verify">
+          <div id="verification" class="modal-verify-text"></div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <div class="modal-buttons">
+          <!-- <button id="modal-verify-btn" type="button">Verify ID</button> -->
+          <button id="modal-go-btn" type="button">Go to ID</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script>
     if ('serviceWorker' in navigator) {
@@ -45,7 +57,9 @@
       });
     }
   </script>
-  <script src="./src/index.js"></script>
+
+  <script src="./src/schedule.js"></script>
+  <script src="./src/popup.js"></script>
 
 </body>
 
