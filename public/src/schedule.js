@@ -33,20 +33,20 @@ const parameters = _.reduce(queries, (acc, query) => {
 }, {})
 
 // Get the id if it exists and create the request uri
-const id = _.get(parameters, 'id')
-const resource = '/schedule'
-const parameter = _.some(id) ? `/${id}` : ''
+const id = _.get(parameters, 'id');
+const resource = '/schedule';
+const parameter = _.some(id) ? `/${id}` : '';
 
 function createRunFromTemplate(run, index) {
-  const attrs = 'event-row run'
+  const attrs = 'event-row run';
 
-  const timestamp = Date.now()
-  const start = new Date(run.time)
-  const startstamp = start.getTime()
+  const timestamp = Date.now();
+  const start = new Date(run.time);
+  const startstamp = start.getTime();
 
-  const time = _.split(run.length, ':')
-  const end = new Date(start.getFullYear(), start.getMonth(), start.getDay(), time[0], time[1], time[2])
-  const endstamp = end.getTime()
+  const time = _.split(run.length, ':');
+  const end = new Date(start.getFullYear(), start.getMonth(), start.getDay(), time[0], time[1], time[2]);
+  const endstamp = end.getTime();
 
   const status = `${attrs + (timestamp > startstamp ? ' passed' : timestamp > endstamp ? ' current' : '')}`;
 
@@ -114,16 +114,14 @@ function setEventTable(event) {
 // Fetch the schedule from the server
 fetch(`${resource + parameter}`)
   .then(response => {
-    response.json().then(eventData => {
-      setEventTitle(eventData);
-      setEventTable(eventData);
-      setFixedDate();
-    })
-  })
-  .catch(error => {
-    // TODO: Figure out what to do in the case of an error.
-    console.log(error)
-  })
+    if (response.ok) {
+      response.json().then(eventData => {
+        setEventTitle(eventData);
+        setEventTable(eventData);
+        setFixedDate();
+      });
+    }
+  });
 
 // Listen to the scrolling table.
 document.querySelector('div#event-table').onscroll = e => {
