@@ -1,0 +1,174 @@
+#modal-backdrop {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+  display: none;
+
+  background-color: #000000aa;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+
+#modal-backdrop[opened] {
+  display: flex;
+  display: -webkit-box; 
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex; 
+  
+  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+
+  align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  
+  justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+}
+
+#modal {
+  height: 190px;
+  width: 400px;
+}
+
+.modal-header {
+  display: flex;
+  display: -webkit-box; 
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+
+  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+
+  align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+
+  justify-content: space-between;
+
+  background-color: #404440;
+  box-sizing: border-box;
+  color: white;
+  max-height: 40px;
+  max-width: 100%;
+  min-height: 40px;
+  min-width: 100%;
+  padding: 10px;
+  /* padding: 2px 16px; */
+}
+
+.modal-title {
+  font-size: 16px;
+}
+
+.modal-close {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: black;
+  cursor: pointer;
+}
+
+.modal-content {
+  display: flex;
+  display: -webkit-box; 
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex; 
+  
+  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+
+  align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+
+  background-color: #ffffff;
+  box-sizing: border-box;
+  max-height: calc(100% - 80px);
+  max-width: 100%;
+  min-height: calc(100% - 80px);
+  min-width: 100%;
+  padding: 20px 16px;
+}
+
+.modal-content div:not(:first-child) {
+  margin-top: 15px;
+}
+
+.modal-form {
+  display: flex;
+  display: -webkit-box; 
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+
+  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+.modal-content .modal-form label {
+  font-size: 15px;
+}
+
+.modal-content .modal-form input {
+  font-size: 15px;
+  text-align: right;
+}
+
+.modal-content .modal-verify[success] {
+  color: greenyellow;
+}
+
+.modal-content .modal-verify {
+  color: maroon;
+}
+
+.modal-footer {
+  display: flex;
+  display: -webkit-box; 
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+
+  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+
+  align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+
+  justify-content: flex-end;
+
+  background-color: #404440;
+  box-sizing: border-box;
+  color: #ffffff;
+  max-height: 40px;
+  max-width: 100%;
+  min-height: 40px;
+  min-width: 100%;
+  padding: 2px 16px;
+}

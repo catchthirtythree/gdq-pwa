@@ -9,6 +9,7 @@
   <link rel="icon" href="./favicon.ico" type="image/x-icon" />
 
   <link href="./css/stylesheet.css" rel="stylesheet">
+  <link href="./css/modal.css" rel="stylesheet">
 
   <script src="./lib/lodash.js"></script>
 </head>
@@ -28,9 +29,9 @@
       <div class="modal-content">
         <div class="modal-form">
           <label for="id">
-            Schedule ID:
+            Enter a schedule ID (starting from 17):
           </label>
-          <input type="text" id="schedule-id" name="id" placeholder="Example: 28">
+          <input type="text" id="schedule-id" name="id" placeholder="17">
         </div>
 
         <div class="modal-verify">
@@ -40,7 +41,7 @@
 
       <div class="modal-footer">
         <div class="modal-buttons">
-          <!-- <button id="modal-verify-btn" type="button">Verify ID</button> -->
+          <button id="modal-verify-btn" type="button">Verify ID</button>
           <button id="modal-go-btn" type="button">Go to ID</button>
         </div>
       </div>
