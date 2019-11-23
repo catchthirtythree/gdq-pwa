@@ -19,20 +19,31 @@ window.onclick = function (event) {
 const idInput = document.querySelector('#modal #schedule-id');
 idInput.onkeydown = e => {
   if (_.isEqual(e.key, 'Enter')) {
-    const inputValue = e.target.value;
-
-    if (inputValue.match(/\d+/)) {
-      window.location.href = `${window.location.origin}/?id=${inputValue}`
-    } else {
-      window.location.href = `${window.location.origin}`;
-    }
+    const value = e.target.value;
+    const query = _.isEmpty(value) ? '' : `/?id=${value}`;
+    window.location.assign(`${window.location.origin}${query}`);
   }
 }
 
-// const verifyBtn = document.querySelector('#modal .modal-footer #modal-verify-btn');
-// verifyBtn.onclick = e => {
-//   // TODO: Verify if the id actually returns a table back.
-// }
+idInput.onkeyup = e => {
+  e.target.value = e.target.value.replace(/[^\d]/, '');
+}
+
+const verifyBtn = document.querySelector('#modal .modal-footer #modal-verify-btn');
+verifyBtn.onclick = e => {
+  const resource = '/schedule';
+  const id = idInput.value;
+  const parameter = _.some(id) ? `/${id}` : '';
+
+  fetch(`${resource + parameter}`)
+    .then(response => {
+      if (response.ok) {
+        console.log(response);
+      } else {
+        console.log('error');
+      }
+    });
+}
 
 const goBtn = document.querySelector('#modal .modal-footer #modal-go-btn');
 goBtn.onclick = e => {
