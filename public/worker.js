@@ -5,13 +5,18 @@ var PRECACHE_URLS = [
   './favicon.ico',
   './manifest.json',
   './index.html',
+  './css/modal.css',
   './css/stylesheet.css',
   './img/icon-256.png',
+  './lib/cache-polyfill.js',
   './lib/lodash.js',
-  './src/index.js'
+  './lib/roboto-slab.woff2',
+  './src/popup.js',
+  './src/schedule.js'
 ]
 
 self.addEventListener('install', event => {
+  console.log('stupid install', event);
   event.waitUntil(
     caches.open(PRECACHE)
       .then(cache => cache.addAll(PRECACHE_URLS))
@@ -20,6 +25,7 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('activate', event => {
+  console.log('stupid activate', event);
   const currentCaches = [PRECACHE, RUNTIME];
   event.waitUntil(
     caches.keys().then(cacheNames => {
