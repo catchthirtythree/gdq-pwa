@@ -45,10 +45,10 @@ function createRunFromTemplate(run, index) {
   const startstamp = start.getTime();
 
   const time = _.split(run.length, ':');
-  const end = new Date(start.getFullYear(), start.getMonth(), start.getDay(), time[0], time[1], time[2]);
+  const end = new Date(start.getFullYear(), start.getMonth(), start.getDate(), start.getHours() + parseInt(time[0]), start.getMinutes() + parseInt(time[1]), start.getSeconds() + parseInt(time[2]));
   const endstamp = end.getTime();
 
-  const status = `${attrs + (timestamp > startstamp ? ' passed' : timestamp > endstamp ? ' current' : '')}`;
+  const status = `${attrs + (timestamp > endstamp ? ' passed' : (timestamp < endstamp && timestamp >= startstamp) ? ' current' : '')}`;
 
   return _.reduce(run, (acc, value, key) => {
     switch (key) {
