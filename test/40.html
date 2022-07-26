@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Games Done Quick</title>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="/static/res/css/main.css" />
+<script src="/static/res/js/mains2.min.js"></script>
+<link rel="shortcut icon" href="/static/res/img/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="/static/res/img/favicon/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/static/res/img/favicon/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/static/res/img/favicon/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/static/res/img/favicon/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/static/res/img/favicon/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/static/res/img/favicon/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/static/res/img/favicon/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/static/res/img/favicon/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/res/img/favicon/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/static/res/img/favicon/favicon-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/static/res/img/favicon/favicon-160x160.png" sizes="160x160">
+<link rel="icon" type="image/png" href="/static/res/img/favicon/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/static/res/img/favicon/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/static/res/img/favicon/favicon-32x32.png" sizes="32x32">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="msapplication-TileImage" content="/static/res/img/favicon/mstile-144x144.png">
+<meta name="msapplication-config" content="/static/res/img/favicon/browserconfig.xml">
+</head>
+<body>
+<div id="battlescene" style="display: none;">
+<p id="inputscene" style="color: #aaff33; font-family: Arial, sans-serif; font-weight: 500; font-size: 56px; position: absolute; top: 6%; right: 10%; text-shadow: 0 0 5px #22ff22;">
+Input 1 </p>
+<a href="#" title="Click to return whence you came, Harrier." onclick="location.reload();">
+<video id="battlevideo" preload="none" loop style="position: fixed; height: 100%; width: 100%; right: 0; left: 0; bottom: 0; margin-left: auto; margin-right: auto;">
+<source id="battlesource1" type="video/webm" src="/static/res/video/harrierverylow.webm">
+<source src="/static/res/video/harrierverylow.mp4" type="video/mp4">
+</video>
+</a>
+</div>
+<div id="scene">
+<div id="white-bg">
+<nav id="top" class="navbar navbar-default navbar-static-top navbar-inverse" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button> <a class="navbar-brand visible-xs-inline" href="#" onclick="window.history.go(-1); return false;"><i class="fa fa-chevron-left"></i></a> <a class="navbar-brand" href="/"><img src="/static/res/img/gdqlogo.png" style="height: 100%" alt="Games Done Quick" /></a>
+</div>
+<div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+<ul class="nav navbar-nav">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">Event Info
+<span class="caret"></span></a>
+<ul class="dropdown-menu" role="menu">
+<li><a href="https://gamesdonequick.com/prize-guide"><i class="fa fa-gift fa-fw"></i> Prize
+Submissions Guide</a></li>
+<li><a href="https://gamesdonequick.com/rules"><i class="fa fa-gavel fa-fw"></i> Event/Broadcast
+Rules</a></li>
+<li><a href="https://gamesdonequick.com/volunteer/faq"><i class="fa fa-question fa-fw"></i>
+Volunteering FAQ</a></li>
+<li class="divider"></li>
+<li><a href="https://gamesdonequick.com/schedule"><i class="fa fa-clock-o fa-fw"></i> Flame Fatales 2022 Schedule</a></li>
+<li class="divider"></li>
+<li><a href="https://gamesdonequick.com/framefatales"><i class="fa fa-gamepad fa-fw"></i> Frame
+Fatales Information</a></li>
+
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">Community Info <span class="caret"></span></a>
+<ul class="dropdown-menu" role="menu">
+<li role="presentation" class="dropdown-header">Games Done Quick</li>
+<li><a href="https://photos.gamesdonequick.com"><i class="fa fa-camera fa-fw"></i> Event
+Photos</a></li>
+<li><a href="https://twitch.tv/gamesdonequick"><i class="fa fa-twitch fa-fw"></i> Twitch
+Channel</a></li>
+<li><a href="https://twitter.com/GamesDoneQuick"><i class="fa fa-twitter fa-fw"></i>
+Twitter</a></li>
+<li role="presentation" class="dropdown-header">Speedrunning Guides</li>
+<li><a href="/mod-guide"><i class="fa fa-gavel fa-fw"></i> Guide to Automated Moderation</a>
+</li>
+<li class="divider"></li>
+<li role="presentation" class="dropdown-header">Speedrunning Communities</li>
+<li><a href="http://speeddemosarchive.com"><i class="fa fa-archive fa-fw"></i> Speed
+Demos Archive</a></li>
+<li><a href="http://speedrunslive.com"><i class="fa fa-video-camera fa-fw"></i> Speed
+Runs Live</a></li>
+<li><a href="http://speedrun.com"><i class="fa fa-clock-o fa-fw"></i> Speedrun.com</a>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us <span class="caret"></span></a>
+<ul class="dropdown-menu" role="menu">
+<li><a href="https://gamesdonequick.com/privacy"><i class="fa fa-eye-slash fa-fw"></i> Privacy
+Policy</a></li>
+<li><a href="https://gamesdonequick.com/jobs"><i class="fa fa-group fa-fw"></i> Jobs at GDQ</a>
+</li>
+<li><a href="https://gamesdonequick.com/contact"><i class="fa fa-pencil fa-fw"></i> Contact Us</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="https://discord.gg/gamesdonequick"><i class="fa fa-fw fa-comments" aria-hidden="true"></i> Discord</a>
+</li>
+<li>
+<a href="https://www.youtube.com/user/gamesdonequick/playlists"><i class="fa fa-fw fa-youtube-play" aria-hidden="true"></i> VODS</a>
+</li>
+<li>
+<a href="/hotfix"><i class="fa fa-fw fa-bolt" aria-hidden="true"></i> HOTFIX</a>
+</li>
+</ul>
+<a href="https://gamesdonequick.com/auth/login" role="button" class="btn btn-primary btn-sm navbar-btn navbar-right extra-button-space">Login</a>
+<a href="https://gamesdonequick.com/auth/register" role="button" class="btn btn-danger btn-sm navbar-btn navbar-right extra-button-space">Register</a> </div>
+</div>
+</nav>
+<div class="container">
+<br />
+</div>
+<div class="container text-center">
+<div class="fa-stack center-block medium-icon-red fa-5x">
+<i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-clock-o fa-stack-1x fa-inverse"></i>
+</div>
+<h1 class="text-gdq-red extra-spacing">Flame Fatales 2022 Schedule</h1>
+<h4 class="text-gdq-black well ">All start and end times below are converted to your local time<span id="offset-detected"></span>.</h4>
+</div>
+<p><a href="#current">Jump to current run</a></p>
+<table id="runTable" class="table table-condensed">
+<thead>
+<tr class="day-split">
+<td>Time &amp; Length</td>
+<td>Run</td>
+<td>Runners &amp; <i class="fa fa-microphone"></i> Host</td>
+<td class="visible-lg">Setup&nbsp;Length</td>
+</tr>
+</thead>
+<tbody>
+<tr class="bg-info">
+<td class="start-time text-right">2022-08-21T16:30:00Z</td>
+<td> <a id="current" name="current"></a>
+Preshow</td>
+<td>Kungfufruitcup, frozenflygone</td>
+<td rowspan="2" class="visible-lg text-center"> </td>
+</tr>
+<tr class="second-row  bg-info ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:30:00 </td>
+<td>Preshow &mdash; GDQ Studio</td>
+<td><i class="fa fa-microphone"></i> Malala Fund</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-21T17:00:00Z</td>
+<td>Unpacking</td>
+<td>Cutieroo</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:00:00 </td>
+<td>any% - Non-Touchscreen, Normal Star, All Levels &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> Lanaruse</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-21T18:12:00Z</td>
+<td>Stardew Valley</td>
+<td>blackheartwings</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:30:00 </td>
+<td>Crafts Room - Seeded &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> Lanaruse</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-21T18:54:00Z</td>
+<td>[Incentive] Stardew Valley</td>
+<td>theValiantSun</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:05:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:20:00 </td>
+<td>Category Extension Showcase - Memes &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> Lanaruse</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-21T19:19:00Z</td>
+<td>A Short Hike</td>
+<td>LaurieDBunnykins</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:15:00 </td>
+<td>All Golden Feathers &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> Char_bunny</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-21T19:46:00Z</td>
+ <td>A Hat in Time</td>
+<td>Aalaizah, Patticus</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:00:00 </td>
+<td>Local Co-op any% &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> Char_bunny</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-21T20:58:00Z</td>
+<td>Katana Zero</td>
+<td>LunaValkyr, modulottie</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:23:00 </td>
+<td>All Stages Normal - Katana Race &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> Char_bunny</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-21T21:33:00Z</td>
+<td>The Legend of Zelda: Ocarina of Time</td>
+<td>clairelynnd</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 4:40:00 </td>
+<td>100% No SRM &mdash; Nintendo 64</td>
+<td><i class="fa fa-microphone"></i> nukkuler / Phant</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-22T02:25:00Z</td>
+<td>Tetris Blast</td>
+<td>Demerine</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:20:00 </td>
+<td>Fight any% &mdash; Game Boy</td>
+<td><i class="fa fa-microphone"></i> Threach</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-22T02:57:00Z</td>
+<td>Final Fantasy IV Free Enterprise Randomizer</td>
+<td>dijonketchup, Asuka424</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:10:00 </td>
+<td>SMS Fatales Race &mdash; Super Nintendo</td>
+<td><i class="fa fa-microphone"></i> Threach</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-22T04:19:00Z</td>
+<td>Sleep</td>
+<td>GDQ Studio</td>
+<td rowspan="2" class="visible-lg text-center"> </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 12:41:00 </td>
+<td>All Cookies &mdash; GDQ Studio</td>
+<td><i class="fa fa-microphone"></i> Studio Workers</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-22T17:00:00Z</td>
+<td>Interview with Malala Fund</td>
+<td>Kungfufruitcup</td>
+<td rowspan="2" class="visible-lg text-center"> </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:15:00 </td>
+<td>Charity% &mdash; GDQ Studio</td>
+<td><i class="fa fa-microphone"></i> Kungfufruitcup</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-22T17:15:00Z</td>
+<td>Boyfriend Dungeon</td>
+<td>DarkLadyMarie</td>
+ <td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:10:00 </td>
+<td>Boyfriendless (aka No Boys%) &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> TrainerAnade</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-22T18:37:00Z</td>
+<td>Solar Ash</td>
+<td>Utsu</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:10:00 </td>
+<td>True Ending (Restricted) &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> TrainerAnade</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-22T19:59:00Z</td>
+<td>Shantae and the Pirate&#039;s Curse</td>
+<td>LaurieDBunnykins</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:05:00 </td>
+<td>any% Pirate Mode (No OoB) &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> blackheartwings</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-22T21:16:00Z</td>
+<td>Xena: Warrior Princess</td>
+<td>cyanidesugar</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:15:00 </td>
+<td>any% &mdash; PlayStation</td>
+<td><i class="fa fa-microphone"></i> blackheartwings</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-22T22:43:00Z</td>
+<td>Praey for the Gods</td>
+<td>Usurpering</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:30:00 </td>
+<td>Echo Rush &mdash; PS4</td>
+<td><i class="fa fa-microphone"></i> Aalaizah</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-23T00:25:00Z</td>
+<td>Shivers</td>
+<td>katie_moon</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:30:00 </td>
+<td>Full Ixupi &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> Aalaizah</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-23T01:07:00Z</td>
+<td>Ghostbusters</td>
+<td>Wolfshadow</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:15:00 </td>
+<td>any% &mdash; Commodore 64</td>
+<td><i class="fa fa-microphone"></i> Aalaizah</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-23T01:34:00Z</td>
+<td>Kuon</td>
+<td>MissScarletTanager</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:55:00 </td>
+<td>Yang Phase &mdash; PlayStation 2</td>
+<td><i class="fa fa-microphone"></i> zokubun</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-23T02:41:00Z</td>
+<td>Strobophagia</td>
+<td>Vynn</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:15:00 </td>
+<td>any% (FEAST Ending) &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> zokubun</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-23T03:08:00Z</td>
+<td>BONUS GAME 1 - Phasmophobia</td>
+<td>Nichole Goodnight, Bathinjan</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:00:00 </td>
+<td>any% Nightmare &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> zokubun</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-23T04:20:00Z</td>
+<td>Sleep</td>
+<td>GDQ Studio</td>
+<td rowspan="2" class="visible-lg text-center"> </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 12:40:00 </td>
+<td>Ghost Stories (Good Ending) &mdash; GDQ Studio</td>
+<td><i class="fa fa-microphone"></i> Studio Workers</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-23T17:00:00Z</td>
+<td>Interview with Malala Fund</td>
+<td>Kungfufruitcup</td>
+<td rowspan="2" class="visible-lg text-center"> </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:15:00 </td>
+<td>Charity% 2.0 &mdash; GDQ Studio</td>
+<td><i class="fa fa-microphone"></i> Kungfufruitcup</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-23T17:15:00Z</td>
+<td>The Legend of Zelda: Ocarina of Time</td>
+<td>Phant, nukkuler</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 2:35:00 </td>
+<td>5 Dungeonsanity Co-op Randomizer &mdash; Nintendo 64</td>
+<td><i class="fa fa-microphone"></i> t0zzle</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-23T20:02:00Z</td>
+<td>Mother (Earthbound Beginnings)</td>
+<td>passere</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:40:00 </td>
+<td>Breadcrumb Glitch any% &mdash; Famicom</td>
+<td><i class="fa fa-microphone"></i> Aalaizah</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-23T20:54:00Z</td>
+<td>Final Fantasy Legend II</td>
+<td>leggystarscream</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 2:00:00 </td>
+<td>Glitchless No Hard Resets &mdash; Game Boy</td>
+<td><i class="fa fa-microphone"></i> Aalaizah</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-23T23:06:00Z</td>
+<td>Kingdom Hearts: Chain of Memories</td>
+<td>AeonFrodo</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:40:00 </td>
+<td>Riku&#039;s Story &mdash; Game Boy Advance</td>
+<td><i class="fa fa-microphone"></i> Kungfufruitcup</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-24T00:58:00Z</td>
+<td>Divinity: Original Sin 2</td>
+<td>Lumi</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:25:00 </td>
+<td>any% &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> tucabass</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-24T01:35:00Z</td>
+<td>Mighty No. 9</td>
+<td>KiwamiZX</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:55:00 </td>
+<td>any% (Hard) &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> tucabass</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-24T02:42:00Z</td>
+<td>Mega Man X</td>
+<td>Clipper</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:40:00 </td>
+<td>100% &mdash; Super Nintendo</td>
+<td><i class="fa fa-microphone"></i> Critique Quartz</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-24T03:34:00Z</td>
+<td>Mega Man 3</td>
+<td>xChristine</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:43:00 </td>
+<td>any% &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> Critique Quartz</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-24T04:29:00Z</td>
+<td>Sleep</td>
+<td>GDQ Studio</td>
+<td rowspan="2" class="visible-lg text-center"> </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 12:31:00 </td>
+<td>get-some-rest-too% &mdash; GDQ Studio</td>
+<td><i class="fa fa-microphone"></i> Studio Workers</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-24T17:00:00Z</td>
+<td>Interview with Malala Fund</td>
+<td>Kungfufruitcup</td>
+<td rowspan="2" class="visible-lg text-center"> </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:15:00 </td>
+<td>Charity% 3.0 &mdash; GDQ Studio</td>
+<td><i class="fa fa-microphone"></i> Kungfufruitcup</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-24T17:15:00Z</td>
+<td>Immortals Fenyx Rising</td>
+<td>Ailis</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:15:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:42:00 </td>
+<td>any% - New Game Plus &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> HeldenSoubrette</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-24T19:12:00Z</td>
+<td>Sealed Bite</td>
+<td>KateLibC</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:15:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:14:00 </td>
+<td>any% &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> HeldenSoubrette</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-24T19:41:00Z</td>
+<td>Maquette</td>
+<td>emeraldaly</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:15:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:35:00 </td>
+<td>&quot;No Skips&quot; &mdash; PlayStation 5</td>
+<td><i class="fa fa-microphone"></i> HeldenSoubrette</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-24T20:31:00Z</td>
+<td>Dharma Doujo</td>
+<td>Lizstar</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:15:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:40:00 </td>
+<td>any% &mdash; Arcade</td>
+<td><i class="fa fa-microphone"></i> TrainerAnade</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-24T21:26:00Z</td>
+<td>Mario Tennis 64</td>
+<td>suzie_geeforce</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:15:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:06:00 </td>
+<td>Mushroom Cup Singles &mdash; Nintendo 64</td>
+<td><i class="fa fa-microphone"></i> TrainerAnade</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-24T21:47:00Z</td>
+<td>ALF</td>
+<td>LadyStarbird</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:15:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:11:00 </td>
+<td>any% &mdash; Sega Master System</td>
+<td><i class="fa fa-microphone"></i> TrainerAnade</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-24T22:13:00Z</td>
+<td>Monolith: Relics of the Past</td>
+<td>Kailaria, Lilac Vrt Olligoci</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:17:00 </td>
+<td>F5% Race &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> TrainerAnade</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-24T22:42:00Z</td>
+<td>Sonic 2 Absolute</td>
+<td>flying fox</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:30:00 </td>
+<td>Tails Beat The Game &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> Lanaruse</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-24T23:24:00Z</td>
+<td>Unsighted</td>
+<td>Roofon</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:35:00 </td>
+<td>any% &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> Lanaruse</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-25T00:11:00Z</td>
+<td>Lifeslide</td>
+<td>selcouthmind</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:47:00 </td>
+<td>NG+ Seedless &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> Lanaruse</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-25T01:10:00Z</td>
+<td>Mickey&#039;s Speedway USA</td>
+<td>garbitheglitcheress</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:40:00 </td>
+<td>All Professional Cups &mdash; Nintendo 64</td>
+<td><i class="fa fa-microphone"></i> Kungfufruitcup</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-25T02:02:00Z</td>
+<td>Hello Kitty and Sanrio Friends Racing</td>
+<td>AirAngel</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:35:00 </td>
+<td>All Tours - Items &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> Kungfufruitcup</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-25T02:49:00Z</td>
+<td>Mario Kart 8 Deluxe</td>
+<td>amber</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:30:00 </td>
+<td>Bonus Tracks, 200cc No Items &mdash; Nintendo Switch</td>
+<td><i class="fa fa-microphone"></i> Kungfufruitcup</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-25T03:31:00Z</td>
+<td>BONUS GAME 2- Mario Kart 8 Deluxe</td>
+<td>amber</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:30:00 </td>
+<td>DLC Waves 1+2, 200cc No Items &mdash; Nintendo Switch</td>
+<td><i class="fa fa-microphone"></i> Kungfufruitcup</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-25T04:13:00Z</td>
+<td>Sleep</td>
+<td>GDQ Studio</td>
+<td rowspan="2" class="visible-lg text-center"> </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 12:39:00 </td>
+<td>did-you-drink-enough-water% &mdash; GDQ Studio</td>
+<td><i class="fa fa-microphone"></i> Studio Workers</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-25T16:52:00Z</td>
+<td>Interview with Malala Fund</td>
+<td>Kungfufruitcup</td>
+<td rowspan="2" class="visible-lg text-center"> </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:15:00 </td>
+<td>Charity% 4.0 &mdash; GDQ Studio</td>
+<td><i class="fa fa-microphone"></i> Kungfufruitcup</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-25T17:07:00Z</td>
+<td>Contra III: The Alien Wars</td>
+<td>t0zzle</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:17:00 </td>
+<td>any% Normal &mdash; Super Nintendo</td>
+<td><i class="fa fa-microphone"></i> Phant</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-25T17:36:00Z</td>
+<td>Haiku the Robot</td>
+<td>Allison8Bit</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:30:00 </td>
+<td>any% &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> Phant</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-25T18:18:00Z</td>
+<td>Love 3</td>
+<td>Char_bunny</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:16:00 </td>
+<td>any% &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> Phant</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-25T18:46:00Z</td>
+<td>The Last Guardian</td>
+<td>SableDragonRook, Usurpering</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 3:27:00 </td>
+<td>any% Race &mdash; PlayStation 4</td>
+<td><i class="fa fa-microphone"></i> HeldenSoubrette</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-25T22:25:00Z</td>
+<td>The Legend of Zelda: Link&#039;s Awakening</td>
+<td>EDL666</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:42:00 </td>
+<td>any% (Glitchless) &mdash; Nintendo Switch</td>
+<td><i class="fa fa-microphone"></i> t0zzle</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-26T00:19:00Z</td>
+<td>Dust: An Elysian Tail</td>
+<td>AggytheAron</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:25:00 </td>
+<td>any% Warps &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> Lanaruse</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-26T00:56:00Z</td>
+<td>Hades</td>
+<td>arcalena, trash_lapras</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:55:00 </td>
+<td>2-Players-1-Controller Modded 3 Weapons &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> Lanaruse</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-26T02:03:00Z</td>
+<td>Metroid Dread</td>
+<td>Metroid Crime</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:55:00 </td>
+<td>All Bosses &mdash; Nintendo Switch</td>
+<td><i class="fa fa-microphone"></i> zokubun</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-26T04:10:00Z</td>
+<td>BONUS GAME 3 - Elden Ring</td>
+<td>Larxa</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:30:00 </td>
+<td>any% &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> zokubun</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-26T04:52:00Z</td>
+<td>Sleep</td>
+<td>GDQ Studio</td>
+<td rowspan="2" class="visible-lg text-center"> </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 12:00:00 </td>
+<td>Pajamas Only &mdash; GDQ Studio</td>
+<td><i class="fa fa-microphone"></i> Studio Workers</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-26T16:52:00Z</td>
+<td>Interview with Malala Fund</td>
+<td>Kungfufruitcup</td>
+<td rowspan="2" class="visible-lg text-center"> </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:15:00 </td>
+<td>Charity% 5.0 &mdash; GDQ Studio</td>
+<td><i class="fa fa-microphone"></i> Kungfufruitcup</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-26T17:07:00Z</td>
+<td>Pokemon Legends: Arceus</td>
+<td>kaguyanicky</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:05:00 </td>
+<td>Beat Kleavor &mdash; Nintendo Switch</td>
+<td><i class="fa fa-microphone"></i> tucabass</td>
+ </tr>
+<tr>
+<td class="start-time text-right">2022-08-26T18:24:00Z</td>
+<td>Phantasy Star IV: Profound Disorder</td>
+<td>LadyStarbird</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:50:00 </td>
+<td>Randomizer any% &mdash; Sega Genesis</td>
+<td><i class="fa fa-microphone"></i> tucabass</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-26T20:26:00Z</td>
+<td>Pac-Man 99</td>
+<td>suzie_geeforce</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:03:50 </td>
+<td>CPU Battle Speed Run &mdash; Nintendo Switch</td>
+<td><i class="fa fa-microphone"></i> tucabass</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-26T20:41:50Z</td>
+<td>Tryrush Deppy</td>
+<td>Lizstar</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:35:00 </td>
+<td>any% &mdash; Sega Saturn</td>
+<td><i class="fa fa-microphone"></i> t0zzle</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-26T21:28:50Z</td>
+<td>Super Ninja-kun</td>
+<td>AirAngel</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:30:00 </td>
+<td>Solo &mdash; Super Famicon</td>
+<td><i class="fa fa-microphone"></i> t0zzle</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-26T22:10:50Z</td>
+<td>Wizards &amp; Warriors</td>
+<td>Threach</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:25:00 </td>
+<td>All Stages &mdash; NES</td>
+<td><i class="fa fa-microphone"></i> t0zzle</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-26T22:47:50Z</td>
+<td>D4DJ Groovy Mix</td>
+<td>kariohki</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:30:00 </td>
+<td>Showcase &mdash; iOS</td>
+<td><i class="fa fa-microphone"></i> nukkuler</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-26T23:29:50Z</td>
+<td>NOISZ STARLIVHT</td>
+<td>Kailaria</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:00:00 </td>
+<td>Rhythm Game Bullet Heck Showcase &mdash; iOS</td>
+<td><i class="fa fa-microphone"></i> nukkuler</td>
+</tr>
+ <tr>
+<td class="start-time text-right">2022-08-27T00:41:50Z</td>
+<td>Mirror&#039;s Edge</td>
+<td>CookieBunny</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:45:00 </td>
+<td>any% &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> nukkuler</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-27T01:38:50Z</td>
+<td>Bloodrayne II</td>
+<td>Gala</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 2:05:00 </td>
+<td>any% New Game &mdash; PlayStation 2</td>
+<td><i class="fa fa-microphone"></i> Nichole Goodnight</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-27T03:55:50Z</td>
+<td>Shadow of the Colossus</td>
+<td>RUBIEHART</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:45:00 </td>
+<td>NTA Bossrush RANDOM &mdash; PlayStation 4</td>
+<td><i class="fa fa-microphone"></i> Nichole Goodnight</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-27T04:52:50Z</td>
+<td>Sleep</td>
+<td>GDQ Studio</td>
+<td rowspan="2" class="visible-lg text-center"> </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 12:00:00 </td>
+<td>Saw&#039;n logs &mdash; GDQ Studio</td>
+<td><i class="fa fa-microphone"></i> Studio Workers</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-27T16:52:50Z</td>
+<td>Interview with Malala Fund</td>
+<td>Kungfufruitcup</td>
+<td rowspan="2" class="visible-lg text-center"> </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:15:00 </td>
+<td>Charity% 6.0 &mdash; GDQ Studio</td>
+<td><i class="fa fa-microphone"></i> Kungfufruitcup</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-27T17:07:50Z</td>
+<td>Pok&eacute;mon Omega Ruby/Alpha Sapphire</td>
+<td>Sanjan, Corvimae</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 3:15:00 </td>
+<td>Omega Ruby vs Alpha Sapphire any% Race &mdash; Nintendo 3DS</td>
+<td><i class="fa fa-microphone"></i> Nichole Goodnight</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-27T20:34:50Z</td>
+<td>Kirby: Nightmare in Dream Land</td>
+<td>Darksol188</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:38:00 </td>
+<td>Meta Knightmare 100% &mdash; Game Boy Advance</td>
+<td><i class="fa fa-microphone"></i> Phant</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-27T21:24:50Z</td>
+<td>Sayonara Mario World</td>
+<td>frozenflygone</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:45:00 </td>
+<td>100% &mdash; Super Nintendo</td>
+<td><i class="fa fa-microphone"></i> Phant</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-27T22:21:50Z</td>
+<td>Celeste</td>
+<td>carrarium</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:45:00 </td>
+<td>All Cassettes &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> Threach</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-27T23:18:50Z</td>
+<td>BONUS GAME 4 - Celeste</td>
+<td>waterwithflavor</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:22:00 </td>
+<td>Farewell DTS &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> Threach</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-27T23:52:50Z</td>
+<td>Bayonetta 2</td>
+<td>a_variety_pack</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:30:00 </td>
+<td>any% Rosa (Easy) &mdash; Nintendo Switch</td>
+<td><i class="fa fa-microphone"></i> Threach</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-28T01:34:50Z</td>
+<td>Titanfall 2</td>
+<td>sapphire_in_pink</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:33:00 </td>
+<td>any% &mdash; PC</td>
+<td><i class="fa fa-microphone"></i> zokubun</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-28T03:19:50Z</td>
+<td>Super Mario All-Stars Shuffler</td>
+<td>Skybilz</td>
+<td rowspan="2" class="visible-lg text-center"> <i class="fa fa-clock-o text-gdq-red" aria-hidden="true"></i> 0:12:00 </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 1:35:00 </td>
+<td>any% No Wrong Warps All Games Shuffler &mdash; Super Nintendo</td>
+<td><i class="fa fa-microphone"></i> nukkuler</td>
+</tr>
+<tr>
+<td class="start-time text-right">2022-08-28T05:06:50Z</td>
+<td>Finale!</td>
+<td>GDQ Studio</td>
+<td rowspan="2" class="visible-lg text-center"> </td>
+</tr>
+<tr class="second-row ">
+<td class="text-right "> <i class="fa fa-clock-o" aria-hidden="true"></i> 0:15:00 </td>
+<td>Thank you &mdash; GDQ Studio</td>
+<td><i class="fa fa-microphone"></i> Frame Fatales Leads</td>
+</tr>
+</tbody>
+</table>
+<script type="text/javascript">
+
+    $(document).ready(function() {
+
+        var dayBreak = null;
+        var firstBreak = true;
+
+        $("#offset-detected").text(' (detected as UTC' + moment().format('Z') + ')');
+
+        $('tbody .start-time').each(function(index) {
+
+
+
+            runTimestamp = moment($(this).html());
+            runTime = new moment(runTimestamp);
+
+            if ($(this).parent().hasClass('second-row')) {
+                firstBreak = false;
+            } else {
+                firstBreak = true;
+            }
+
+
+
+            if (dayBreak != runTime.date()) {
+
+                dayBreak = runTime.date(); // Get the day of the month for the day rows
+
+                if (firstBreak != true) {
+
+                    $(this).parent().next('tr').before('<tr class="day-split" >' +
+                        '<td colspan="20">' +
+                        runTime.format('dddd, MMMM Do ') + '</td></tr>');
+                } else {
+                    $(this).parent().before('<tr class="day-split" >' +
+                        '<td colspan="20">' +
+                        runTime.format('dddd, MMMM Do ') + '</td></tr>');
+                }
+
+
+            }
+
+
+            $(this).html(runTime.format('LT'));
+        });
+    });
+</script>
+<br /><br />
+<div id="foot" class="text-center">
+<a href="#top"><i class="fa fa-chevron-circle-up text-gdq-white fa-2x" style="padding-top: 5px"></i></a>
+<p style="padding-top: 10px"><a id="battle" href="#" onclick="document.getElementById('battlevideo').play();">
+Many more battle scenes will soon be available!</a>
+</p>
+<br /><br />
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -12,7 +12,7 @@ const runTemplate = `
       <span class="event-cell medium">#runner#</span>
       <span class="event-cell short time">#setup#</span>
     </div>
-    
+
     <div class="event-line">
       <span class="event-cell short time">#length#</span>
       <span class="event-cell long">#category#</span>
@@ -23,13 +23,13 @@ const runTemplate = `
 `
 
 // Get the query parameters from the search thing and turn them into an object
-const search = window.location.search.substring(1)
+const search = window.location.search.substring(1);
 const queries = search.split('&')
 const parameters = _.reduce(queries, (acc, query) => {
-  const split = query.split('=')
+  const split = query.split('=');
   return _.assign({}, acc, {
     [split[0]]: split[1]
-  })
+  });
 }, {})
 
 // Get the id if it exists and create the request uri
@@ -52,62 +52,65 @@ function createRunFromTemplate(run, index) {
 
   return _.reduce(run, (acc, value, key) => {
     switch (key) {
-      case 'time':
-        let date = new Date(value)
+      case 'time': {
+        let date = new Date(value);
 
         let hours = date.getHours()
-        let hstr = `${hours < 10 ? `0${hours}` : hours}`
+        let hstr = `${hours < 10 ? `0${hours}` : hours}`;
 
-        let minutes = date.getMinutes()
-        let mstr = `${minutes < 10 ? `0${minutes}` : minutes}`
+        let minutes = date.getMinutes();
+        let mstr = `${minutes < 10 ? `0${minutes}` : minutes}`;
 
-        let period = hours < 12 ? 'AM' : 'PM'
+        let period = hours < 12 ? 'AM' : 'PM';
 
-        let time = `${hstr}:${mstr} ${period}`
+        let time = `${hstr}:${mstr} ${period}`;
 
-        return acc.replace('#timestamp#', value).replace(`#${key}#`, time)
+        return acc.replace('#timestamp#', value).replace(`#${key}#`, time);
+      }
 
-      default:
-        return acc.replace(`#${key}#`, value)
+      default: {
+        return acc.replace(`#${key}#`, value);
+      }
     }
-  }, runTemplate.replace('#index#', index).replace('#status#', status))
+  }, runTemplate.replace('#index#', index).replace('#status#', status));
 }
 
 function setEventTitle(event) {
-  const titleElement = document.querySelector('#event-title')
+  const titleElement = document.querySelector('#event-title');
   if (titleElement) {
-    document.title = event.title
-    titleElement.textContent = event.title
+    document.title = event.title;
+    titleElement.textContent = event.title;
   }
 }
 
 function sameDay(date1, date2) {
   return (date1.getFullYear() === date2.getFullYear())
     && (date1.getMonth() === date2.getMonth())
-    && (date1.getDate() === date2.getDate())
+    && (date1.getDate() === date2.getDate());
 }
 
 function setEventTable(event) {
-  const tableElement = document.querySelector('#event-table')
+  const tableElement = document.querySelector('#event-table');
   if (tableElement) {
-    let lastDate = null
+    let lastDate = null;
 
     _.forEach(event.table.runs, (run, index) => {
-      let nextDate = new Date(run.time)
+      let nextDate = new Date(run.time);
       if (_.isNil(lastDate) || !sameDay(lastDate, nextDate)) {
         let options = {
           weekday: 'long',
           month: 'long',
           day: 'numeric'
-        }
+        };
 
-        tableElement.innerHTML += dateTemplate.replace('#timestamp#', nextDate.getTime()).replace('#date#', nextDate.toLocaleDateString("en-US", options))
+        tableElement.innerHTML += dateTemplate.replace('#timestamp#', nextDate.getTime())
+          .replace('#date#', nextDate.toLocaleDateString("en-US", options));
 
-        lastDate = nextDate
+        lastDate = nextDate;
       }
 
-      tableElement.innerHTML += createRunFromTemplate(run, index)
-    })
+      tableElement.innerHTML += createRunFromTemplate(run, index);
+    });
   }
 }
 
